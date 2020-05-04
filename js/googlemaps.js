@@ -1,8 +1,6 @@
 //console.log('Will we be able to pull this one off?')
 
-//let mapContainer = document.getElementById("mapContainer")
-
-
+let mapContainer = document.getElementById("mapContainer")
 
 
 document.body.innerHTML='<div id="map-canvas" style="width:1000px; height:500px;"></div>'
@@ -11,13 +9,14 @@ document.body.innerHTML='<div id="map-canvas" style="width:1000px; height:500px;
     function initMap() {
         var mapOptions = {
             zoom: 8,
-            center: new google.maps.LatLng(-34.397, 150.644)
+            center: new google.maps.LatLng(29.7604, 95.3698)
     };
 
 //new map
     var map = new google.maps.Map(document.getElementById("map-canvas"), 
     mapOptions);
     }
+
    /* // marker
     var marker = new google.maps.Marker({
       position:{lat:29.7604,lng:95.3698},
@@ -33,3 +32,6 @@ function loadScript() {
 }
 
 window.onload = loadScript;
+
+
+
