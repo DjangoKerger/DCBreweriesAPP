@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const listContainer = document.getElementById("listContainer")
 
 
@@ -37,3 +38,5 @@ const listContainer = document.getElementById("listContainer")
 
 listContainer.innerHTML = brewery.join(" ")
 
+=======
+>>>>>>> 7f1315a1293a7e26b9224dd42f74d6225db7e18b
