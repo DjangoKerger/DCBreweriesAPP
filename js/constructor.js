@@ -15,12 +15,25 @@ const listContainer = document.getElementById("listContainer")
 //     listContainer.insertAdjacentHTML('beforeend',brewerie)
 // }
 
-const brewery = sampleDataArray.map(function(brew){
-    return `<h1>${brew.brewery.name}</h1>
-            <a href="2ndpage.html"><img src="${brew.brewery.images.large}" alt=${brew.brewery.id}></a>
-            <p> ${brew.brewery.}
-            <a href ="${brew.brewery.website}">Visit the website</a>`
-            
-})
+//const location = searchByLocation().then(data => {
+//   -------------The rest of your code-----------------
+//console.log(data)
+//})
+
+// const brewery = sampleDataArray.map(function (brew) {
+//     return `
+//         <div>       
+//             <div class ="row">
+//                 <div class="col-lg-2 col-md-4 col-sm-6" style="background-color:00a1ab; border: 1px solid">
+//                     <h1>${brew.brewery.name}</h1>
+                    
+//                     <p> ${brew.streetAddress}
+//                     <a href ="${brew.brewery.website}">Visit the website</a>
+//                 </div>
+//             </div>
+//         </div>`
+//     //<a href="2ndpage.html"><img src="${brew.brewery.images.large}" alt=${brew.brewery.id}></a>
+// })
 
 listContainer.innerHTML = brewery.join(" ")
+

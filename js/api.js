@@ -1,3 +1,9 @@
+// How to use the searchByLocation function
+//searchByLocation().then(data => {
+//   -------------The rest of your code-----------------
+//console.log(data)
+//})
+
 const sampleDataArray = [
     {
       "id": "LiqcRm",
