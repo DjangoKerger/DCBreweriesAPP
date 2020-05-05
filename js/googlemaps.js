@@ -1,48 +1,44 @@
-//console.log('Will we be able to pull this one off?')
+//console.log(searchByLocation);
 
-let mapContainer = document.getElementById("mapContainer")
+// How to use the searchByLocation function
+// searchByLocation().then(data => {
+//   -------------The rest of your code-----------------
+ //  console.log(data)
+// })// HANNAH WORKS IS ABOVE FOR BJANGO 
 
-/*
-document.body.innerHTML='<div id="map-canvas" style="width:1000px; height:500px;"></div>'
+const sampleApiResponse = {
+    coord: {
+        lat: 123123,
+        lng: 1234234234
+    },
+    dataArray: ['brew1','brew2']
+}
 
+let map = {}
 
-// the option in the map
-    function initMap() {
-        var mapOptions = {
-            zoom: 8,
-            center: new google.maps.LatLng(-34.397, 150.644)
-    };
-
-//new map
-    var map = new google.maps.Map(document.getElementById("map-canvas"), 
-    mapOptions);
-    
+const mapContainer = document.getElementById("mapContainer")
+searchByLocation().then(data =>{
+    console.log(map)
+    //let myLatLng = sampleApiResponse.coord
+    let myLatLng = {lat:29.749907, lng:-95.358421};
     let marker = new google.maps.Marker({
-        position: mylatlng,
+        position: myLatLng,
         map: map,
+        title: "hello world",
     });
-}
-///////////////////////////////////////////
-*/
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAlkt5RglHfe4Dt_NcVr-3S6HJ8Yo47WIE&callback=initMap';
-  document.body.appendChild(script);
-}
-//////////////////////////////////////////////
-window.onload = loadScript; 
 
-(function(window, google) {
 
-    // map option
-    var options = {
-        center: {
-            lat: 37.79
-        }
+    
+})
+
+function initMap() {
+    let myLatLng = {lat:29.749907, lng:-95.358421};
+    
+    let mapOptions = {
+        zoom: 4,
+        center: myLatLng
     }
-    //
 
-}(window,google));
-
-
+    map = new google.maps.Map(document.getElementById("mapContainer"), mapOptions);
+    
+}

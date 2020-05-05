@@ -29,7 +29,6 @@ const ferdaLocation = data => JSON.parse(data.target.response).data
 
 
 
-
 //----------------------------SHARED APIS BELOW!!!!!---------------------
 
 //Location Search API
@@ -65,7 +64,7 @@ const searchByLocation = async () => {
     method: 'GET',
     url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}` + apiKey
   }
-  const locationData = await doCORSRequest(options, ferdaLocation).then(data => data)
+  const locationData = await doCORSRequest(options, ferdaLocation).then(data => console.log(data))
   return locationData
 }
 
