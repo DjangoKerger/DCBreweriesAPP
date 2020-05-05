@@ -63,15 +63,25 @@ const searchByLocation = async () => {
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}` + apiKey
+    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100` + apiKey
   }
-  const locationData = await doCORSRequest(options, ferdaLocation).then(data => data)
+  const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
+    //data is the array we used to send 
+    return {
+      coord: 
+        {
+        lat: latitude,
+        lng: longitude
+        },
+      brewList: data
+    }
+  })
   return locationData
 }
 
 // How to use the searchByLocation function
-// searchByLocation().then(data => {
+//  searchByLocation().then(data => {
 //   -------------The rest of your code-----------------
-//   would start with console.log(data)
-// })
+//    console.log(data)
+//  })
 
