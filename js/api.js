@@ -80,8 +80,8 @@ const searchByLocation = async () => {
 }
 
 // How to use the searchByLocation function
-//  searchByLocation().then(data => {
+  searchByLocation().then(data => {
 //   -------------The rest of your code-----------------
-//    console.log(data)
-//  })
+    console.log(data)
+  })
 
