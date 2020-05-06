@@ -1,3 +1,77 @@
-body{
-    background-color: red;
+#listContainer{
+    background-color:#EDF7F6 ;
+    padding:50px ;
+    
+    
+}
+
+#MAP{
+    border: solid 5px;
+    margin: 20px 300px 20px 30px;
+    padding: 0 0 400 0;
+
+}
+.card-deck{
+    margin: 20px;
+}
+
+
+.card-text{
+    font-size: 20px;
+}
+
+.card-body{
+    
+}
+
+.navbar{
+    background-color:#EDF7F6 ;
+} 
+
+.btn{
+    background-color: #2660A4;
+    color: azure;
+}
+
+.card{
+    border-radius: 0;
+    box-shadow: 5px 5px 15px #e74c3c;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    
+}
+
+.card:hover{
+    background:#e74c3c ;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px #9E9E9E;
+}
+
+h3{
+    font-weight: bold;
+}
+
+h5{
+    font-weight: bold;
+}
+
+.card-body img{
+    margin-top: -100px;
+}
+
+.col {
+    padding-top: 50px; 
+}
+
+.card-body .btn {
+    background-color: #fff;
+    margin: 20px;
+    
+}
+
+.col-lg-3 {
+    padding:30px;
 }

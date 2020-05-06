@@ -19,7 +19,7 @@ function doCORSRequest(options, dataHandler) {
     x.send(options.data);
   })
   
-}
+ }
 
 
 
@@ -34,7 +34,8 @@ const ferdaLocation = data => {
   }
 }
 
-//----------------------------SHARED APIS BELOW!!!!!---------------------
+
+// //----------------------------SHARED APIS BELOW!!!!!---------------------
 
 //Location Search API
 const searchByLocation = async () => {
