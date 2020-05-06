@@ -5,7 +5,6 @@ const renderList = (breweryArray) => {
   let brewery = breweryArray.map(function (brew) {
     return `
     <div class="col-lg-3 col-md-6">
-      <div class="card my-3 py-5 text-center">
         <div class="card-body">
           <h3 class="card-title">${brew.brewery.name}</h3>
           <h5>${brew.locationTypeDisplay}</h5>
