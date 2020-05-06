@@ -38,6 +38,7 @@ const searchByLocation = async () => {
     function getLocation(){
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition, showError)
+
       }else {
         errorHandling.innerHTML = "Geolocation is not supported by this browser.";
       }
@@ -62,15 +63,26 @@ const searchByLocation = async () => {
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}` + apiKey
+    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100` + apiKey
   }
-  const locationData = await doCORSRequest(options, ferdaLocation).then(data => console.log(data))
+  
+  const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
+   
+    return {
+      coord: 
+        {
+        lat: latitude,
+        lng: longitude
+        },
+      brewList: data
+    }
+  })
   return locationData
 }
 
 // How to use the searchByLocation function
-// searchByLocation().then(data => {
-//   -------------The rest of your code-----------------
-//   would start with console.log(data)
-// })
+//  searchByLocation().then(data => {
+//   //-------------The rest of your code-----------------
+//    console.log(data)
+//  })
 
