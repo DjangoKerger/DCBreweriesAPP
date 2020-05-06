@@ -19,7 +19,7 @@ function doCORSRequest(options, dataHandler) {
     x.send(options.data);
   })
   
-// }
+ }
 
 
 
@@ -37,20 +37,20 @@ const ferdaLocation = data => {
 
 // //----------------------------SHARED APIS BELOW!!!!!---------------------
 
-// //Location Search API
-// const searchByLocation = async () => {
-//   //Need to get user's current location.
-//   const promise = new Promise((resolve, reject) => {
-//     function getLocation(){
-//       if(navigator.geolocation){
-//         navigator.geolocation.getCurrentPosition(showPosition, showError)
-//       }else {
-//         errorHandling.innerHTML = "Geolocation is not supported by this browser.";
-//       }
-//     }
-//     function showPosition(position) {
-//       resolve(position)
-//     }
+//Location Search API
+const searchByLocation = async () => {
+  //Need to get user's current location.
+  const promise = new Promise((resolve, reject) => {
+    function getLocation(){
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition, showError)
+      }else {
+        errorHandling.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    function showPosition(position) {
+      resolve(position)
+    }
   
     function showError(error){
       if(error){
