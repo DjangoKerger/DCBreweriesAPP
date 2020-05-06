@@ -31,6 +31,8 @@ searchByLocation().then(data =>{
        let title = data.brewList[index].brewery.name
         makeMarker(data.brewList[index].latitude, data.brewList[index].longitude, title)
     }
+
+    renderList(data.brewList)
     
 }) 
     function makeMarker(lat, lng, title) {
