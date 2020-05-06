@@ -6,7 +6,6 @@ const renderList = (breweryArray) => {
     return `
     <div class="col-lg-3 col-md-6">
         <div class="card-body">
-          
           <h3 class="card-title">${brew.brewery.name}</h3>
           <h5>${brew.locationTypeDisplay}</h5>
           <p class="card-text">${brew.streetAddress}, ${brew.locality} ${brew.postalCode}</p>
@@ -20,7 +19,10 @@ const renderList = (breweryArray) => {
   })
   listContainer.innerHTML = brewery.join(" ")
 }
-//<img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3"></img>
+
+//          <img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3">
+
+
 
 // listContainer.innerHTML = <nav class="navbar navbar-expand-lg navbar-light">
 // <a class="navbar-brand" href="#">BreweryAPP</a>
