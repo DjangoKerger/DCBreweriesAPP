@@ -34,7 +34,6 @@ const ferdaLocation = data => {
   }
 }
 
-
 //----------------------------SHARED APIS BELOW!!!!!---------------------
 
 //Location Search API
@@ -44,6 +43,7 @@ const searchByLocation = async () => {
     function getLocation(){
       if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition, showError)
+
       }else {
         errorHandling.innerHTML = "Geolocation is not supported by this browser.";
       }
@@ -68,8 +68,9 @@ const searchByLocation = async () => {
     method: 'GET',
     url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100&` + apiKey
   }
+  
   const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
-    //data is the array we used to send 
+   
     return {
       coord: 
         {
