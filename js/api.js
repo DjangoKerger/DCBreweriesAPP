@@ -1,6 +1,6 @@
 const errorHandling = document.getElementById('errorHandling')
 const baseURL = 'http://api.brewerydb.com/v2'
-const apiKey = '&key=2f48d2e1e703b3f083ef898dc1c27b0c'
+const apiKey = 'key=2f48d2e1e703b3f083ef898dc1c27b0c'
 
 var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
 
@@ -25,9 +25,14 @@ function doCORSRequest(options, dataHandler) {
 
 
 //The callback function --- what I want to do with the data
-const ferdaLocation = data => JSON.parse(data.target.response).data
-
-
+const ferdaLocation = data => {
+  const locationData = JSON.parse(data.target.response).data
+  if(locationData){
+    return locationData
+  }else{
+    return []
+  }
+}
 
 
 //----------------------------SHARED APIS BELOW!!!!!---------------------
@@ -56,14 +61,12 @@ const searchByLocation = async () => {
     getLocation()
   })
 
-  '/search/geo/point?lat=29.746149&lng=-95.350801'
-
   const coords = await promise.then(data => data.coords) 
   const latitude = coords.latitude
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100` + apiKey
+    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100&` + apiKey
   }
   const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
     //data is the array we used to send 
@@ -80,8 +83,27 @@ const searchByLocation = async () => {
 }
 
 // How to use the searchByLocation function
-  searchByLocation().then(data => {
+//searchByLocation().then(data => {
 //   -------------The rest of your code-----------------
-    console.log(data)
-  })
+//console.log(data)
+//})
 
+//-------------Function for List of beers-----------------
+
+const ferdaListOfBeers = data => {
+  const beerList = JSON.parse(data.target.response).data
+  if(beerList){
+    return beerList
+  }else{
+    return []
+  }
+}
+
+const getListOfBeers = async (brewID) => {
+  const options = {
+    method: 'GET',
+    url: baseURL + `/brewery/${brewID}/beers?` + apiKey
+  }
+  const listOfBeers = await doCORSRequest(options, ferdaListOfBeers).then(data => data)
+    return listOfBeers
+}
