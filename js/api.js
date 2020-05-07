@@ -1,6 +1,6 @@
 const errorHandling = document.getElementById('errorHandling')
-const baseURL = 'https://www.brewerydb.com'
-const apiKey = 'key=2f48d2e1e703b3f083ef898dc1c27b0c'
+const baseURL = 'https://api.brewerydb.com/v2'
+const apiKey = 'key=f41704bcb789fcc7e9b58e63762aa764'
 
 var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
 
@@ -67,7 +67,7 @@ const searchByLocation = async () => {
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/browse/map/get-breweries?lat=${latitude}&lng=${longitude}&radius=10&` + apiKey
+    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=10&` + apiKey
   }
   
   const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
