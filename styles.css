@@ -8,8 +8,7 @@
 body {
     background-image: url(https://image.freepik.com/free-photo/background-black-wall-large-texture_29332-1042.jpg);
     background-position: center;
-    bac
-}
+
 }
 .card-deck{
     margin: 20px;
@@ -69,7 +68,7 @@ body {
     bottom: 5%;
 }
 
-#mapcontainer {
+#mapContainer {
     margin: 30px;
     position: relative;
     left: 30px;
@@ -86,7 +85,6 @@ body {
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
     position: relative;
-    left: 43%;
     top: 250px;
 }
 
@@ -150,3 +148,15 @@ h5{
     margin-top: -100px;
 
 }
+@media screen and (min-width: 480px) {
+    #mapContainer {
+        display: inline-block; 
+        float: none; 
+        width: 100%;
+    }
+    .neon {
+        display: inline-block; 
+        float: none; 
+        width: 100%;
+    }
+  }

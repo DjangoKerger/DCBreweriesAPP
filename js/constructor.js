@@ -29,12 +29,12 @@ const renderList = (breweryArray) => {
   
   })
   listContainer.innerHTML = brewery.join(" ")
-  document.getElementById("btn1").addEventListener("click",function(){
-    ferdaListOfBeers().then(data => {
+ // document.getElementById("btn1").addEventListener("click",function(){
+ //   ferdaListOfBeers().then(data => {
       //   -------------The rest of your code-----------------
-      console.log(data)
-      })
-  }
+ //     console.log(data)
+ //     })
+  //}
 
 
 //
