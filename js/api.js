@@ -67,7 +67,7 @@ const searchByLocation = async () => {
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/browse/map/get-breweries?lat=${latitude}&lng=${longitude}&radius=10` + apiKey
+    url: baseURL + `/browse/map/get-breweries?lat=${latitude}&lng=${longitude}&radius=10&` + apiKey
   }
   
   const locationData = await doCORSRequest(options, ferdaLocation).then(data => {
