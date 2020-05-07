@@ -5,11 +5,11 @@
     
 }
 
-#MAP{
-    border: solid 5px;
-    margin: 20px 300px 20px 30px;
-    padding: 0 0 400 0;
-
+body {
+    background-image: url(https://image.freepik.com/free-photo/background-black-wall-large-texture_29332-1042.jpg);
+    background-position: center;
+    bac
+}
 }
 .card-deck{
     margin: 20px;
@@ -48,6 +48,34 @@
     border-radius: 5px;
     border: none;
     box-shadow: 5px 5px 10px #9E9E9E;
+}
+
+.neon {
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 6em;
+    color: #fff;
+    text-shadow: 0 0 20px #c70039;
+    
+}
+.neon:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    color: #ff005b;
+    filter: blur(15px);
+}
+.neon:before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #fe3e80;
+    z-index: -2;
+    opacity: .5;
+    filter: blur(40px);
 }
 
 h3{
