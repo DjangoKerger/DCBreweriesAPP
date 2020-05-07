@@ -4,7 +4,7 @@ function initMap() {
     let myLatLng2 = {lat:29.749907, lng:-95.358421}//{lat:29.749907, lng:-82.9001}
     
     let mapOptions = {
-        zoom: 9,
+        zoom: 13,
         center: myLatLng2
     }
 
@@ -14,7 +14,7 @@ function initMap() {
     //This will be deleted when we switch to api (live) data
     const data = {
         coord : {
-            lat: 29.7604,
+            lat: 29.7304,
             lng: -95.3698
 
         },
@@ -24,13 +24,13 @@ function initMap() {
 
     let myLatLng; 
     //let icon = "https://cdn.dribbble.com/users/11591/screenshots/1139923/beer_pin.png"//
-    makeMarker(data.coord.lat, data.coord.lng, "myLocation")
+    makeMarker(data.coord.lat, data.coord.lng, "myLocation", 'https://img.icons8.com/officexs/2x/dizzy-person.png')
  
     for (let index = 0; index < data.brewList.length; index++) {
        // console.log(data.brewList[index].brewery.name)
        let title = data.brewList[index].brewery.name
        
-        makeMarker(data.brewList[index].latitude, data.brewList[index].longitude, title)// icon
+        makeMarker(data.brewList[index].latitude, data.brewList[index].longitude, title, "https://img.icons8.com/officexs/2x/beer.png")// icon
     }
 
 
@@ -65,7 +65,7 @@ console.log('map is loaded')
     
     
 //}) 
-    function makeMarker(lat, lng, title) { //icon 
+    function makeMarker(lat, lng, title, iconUrl) { //icon 
         myLatLng = new google.maps.LatLng(
             {lat: lat, lng: lng})
             ;
@@ -73,7 +73,7 @@ console.log('map is loaded')
             position: myLatLng,
             map: map,
             title: title,
-            icon: "http://maps.google.com/mapfiles/kml/pal2/icon2.png" //"https://cdn.dribbble.com/users/11591/screenshots/1139923/beer_pin.png"
+            icon: iconUrl 
         }); 
     }
  
