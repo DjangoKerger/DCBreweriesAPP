@@ -22,7 +22,14 @@
 let map = {}
 
 const mapContainer = document.getElementById("mapContainer")
-searchByLocation().then(data =>{
+//searchByLocation().then(data =>{
+    const data = {
+        coord : {
+            lat: 29.7604,
+            lng: -95.3698
+        },
+        brewList: bigSample
+    }
     console.log(data);
     let myLatLng; 
     //let icon = "https://cdn.dribbble.com/users/11591/screenshots/1139923/beer_pin.png"//
@@ -37,7 +44,7 @@ searchByLocation().then(data =>{
 
     renderList(data.brewList)
     
-}) 
+//}) 
     function makeMarker(lat, lng, title) { //icon 
         myLatLng = new google.maps.LatLng(
             {lat: lat, lng: lng})
