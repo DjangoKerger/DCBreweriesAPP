@@ -15,6 +15,14 @@ function initMap() {
 
 console.log('map is loaded')
 
+
+//After we get user coordinates then center map
+function moveToLocation(lat, lng){
+    const center = new google.maps.LatLng(lat, lng);
+    // using global variable:
+    map.panTo(center);
+  }
+
 // How to use the searchByLocation function
 //When the api is live again we will use the data from the parameter instead of our variable 'data'
 //  searchByLocation().then(data => {
@@ -37,7 +45,7 @@ console.log('map is loaded')
 
 
 searchByLocation().then(data =>{
-
+    moveToLocation(data.coord.lat, data.coord.lng)
     makeMarker(data.coord.lat, data.coord.lng, "myLocation", 'https://img.icons8.com/officexs/2x/dizzy-person.png')
  
     for (let index = 0; index < data.brewList.length; index++) {
