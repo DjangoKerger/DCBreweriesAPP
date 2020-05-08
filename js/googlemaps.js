@@ -11,30 +11,6 @@ function initMap() {
     const mapContainer = document.getElementById("mapContainer")
 
     map = new google.maps.Map(mapContainer, mapOptions)
-    //This will be deleted when we switch to api (live) data
-    const data = {
-        coord : {
-            lat: 29.7304,
-            lng: -95.3698
-
-        },
-        brewList: bigSample
-
-    }
-
-    let myLatLng; 
-    //let icon = "https://cdn.dribbble.com/users/11591/screenshots/1139923/beer_pin.png"//
-    makeMarker(data.coord.lat, data.coord.lng, "myLocation", 'https://img.icons8.com/officexs/2x/dizzy-person.png')
- 
-    for (let index = 0; index < data.brewList.length; index++) {
-       // console.log(data.brewList[index].brewery.name)
-       let title = data.brewList[index].brewery.name
-       
-        makeMarker(data.brewList[index].latitude, data.brewList[index].longitude, title, "https://img.icons8.com/officexs/2x/beer.png")// icon
-    }
-
-
-    //renderList(data.brewList)
 }
 
 console.log('map is loaded')
@@ -60,16 +36,25 @@ console.log('map is loaded')
  // api for places : AIzaSyAlkt5RglHfe4Dt_NcVr-3S6HJ8Yo47WIE
 
 
-//searchByLocation().then(data =>{
+searchByLocation().then(data =>{
+
+    makeMarker(data.coord.lat, data.coord.lng, "myLocation", 'https://img.icons8.com/officexs/2x/dizzy-person.png')
+ 
+    for (let index = 0; index < data.brewList.length; index++) {
+        let title = data.brewList[index].brewery.name
+        makeMarker(data.brewList[index].latitude, data.brewList[index].longitude, title, "https://img.icons8.com/officexs/2x/beer.png")// icon
+    }
+
+
+    renderList(data.brewList)
     
     
-    
-//}) 
+}) 
     function makeMarker(lat, lng, title, iconUrl) { //icon 
         myLatLng = new google.maps.LatLng(
             {lat: lat, lng: lng})
             ;
-        let marker = new google.maps.Marker({
+        new google.maps.Marker({
             position: myLatLng,
             map: map,
             title: title,

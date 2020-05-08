@@ -6,7 +6,8 @@
 #mapContainer{
     width:100%; 
     height:500px;
-    padding:30px
+    padding:30px;
+    margin: 30px 0px
 }
 
 body {
@@ -52,7 +53,7 @@ body {
     -moz-transition: all 0.3s ease-in;
     min-height: 451px;
     max-height: 451px;
-    margin: 20px 0px;
+    margin: 60px 0px;
     position: relative;
     
     
@@ -69,14 +70,6 @@ body {
 .bottom-card{
     position: absolute;
     bottom: 5%;
-}
-
-#mapContainer {
-    margin: 30px;
-    position: relative;
-    left: 30px;
-    bottom: 30px;
-
 }
 
 .neon {
