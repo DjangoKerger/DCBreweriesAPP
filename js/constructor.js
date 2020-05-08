@@ -3,38 +3,35 @@ listContainer = document.getElementById("listContainer")
 
 const renderList = (breweryArray) => {
   let brewery = breweryArray.map(function (brew) {
-    let image = ""
-    try{
-     
-      image = `<img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3"></img>`
-
-  }catch {}
     return `
     <div class="col-lg-3 col-md-6">
       <div class="card">
         <div class="card-body">
-          ${image}
           <div>
+          <img src="${brew.brewery.images ? brew.brewery.images.squareMedium : ''}" class="img-fluid rounded-circle w-50 mb-3"></img>
             <h3 class="card-title">${brew.brewery.name}</h3>
-            <h5>${brew.locationTypeDisplay}</h5>
-            <p class="card-text">${brew.streetAddress}, ${brew.locality} ${brew.postalCode}</p>
+            <h5>${brew.locationTypeDisplay ? brew.locationTypeDisplay : ''}</h5>
+            <p class="card-text">${brew.streetAddress ? brew.streetAddress : ''}, ${brew.locality ? brew.locationTypeDisplay :''} ${brew.postalCode ? brew.postalCode :''}</p>
           </div>
           <div class="bottom-card">
             <button type="button" class="btn btn-outline-#C47335"><i class="fab fa-facebook-square fa-2x" style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-instagram fa-2x"style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-twitter-square fa-2x"style="color:#C47335"></i></button>
-            <button type="button" id = "btn1" class="btn btn1">Beer menu</button>
+            <button type="button" class="btn btn1">Beer menu</button>
           </div>
         </div>      
       </div>    
     </div>`
   
   })
+
   listContainer.innerHTML = brewery.join(" ")
- // document.getElementById("btn1").addEventListener("click",function(){
- //   ferdaListOfBeers().then(data => {
-      //   -------------The rest of your code-----------------
- //     console.log(data)
- //     })
-  //}
+
+}
+//  document.getElementById("btn1").addEventListener("click",function(){
+//    ferdaListOfBeers().then(data => {
+//         -------------The rest of your code-----------------
+//      console.log(data)
+//      })
+//   }
 
 
 //
