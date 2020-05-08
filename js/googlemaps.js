@@ -34,7 +34,7 @@ function initMap() {
     }
 
 
-    renderList(data.brewList)
+    //renderList(data.brewList)
 }
 
 console.log('map is loaded')

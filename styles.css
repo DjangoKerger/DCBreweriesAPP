@@ -1,15 +1,17 @@
 #listContainer{
     background-color:#EDF7F6 ;
     padding:50px ;
-    
-    
+}
+
+#mapContainer{
+    width:100%; 
+    height:500px;
+    padding:30px
 }
 
 body {
     background-image: url(https://image.freepik.com/free-photo/background-black-wall-large-texture_29332-1042.jpg);
     background-position: center;
-    bac
-}
 }
 .card-deck{
     margin: 20px;
@@ -50,14 +52,6 @@ body {
     box-shadow: 5px 5px 10px #9E9E9E;
 }
 
-#mapcontainer {
-    margin: 30px;
-    position: relative;
-    left: 30px;
-    bottom: 30px;
-
-}
-
 .neon {
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
@@ -66,9 +60,6 @@ body {
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
-    position: relative;
-    left: 43%;
-    top: 250px;
 }
 
 @-webkit-keyframes glow {
@@ -121,13 +112,12 @@ h5{
     margin: 20px;
     
 }
-
-.col-lg-3 {
-    padding:30px;
-}
-
 .headerDiv {
     position: relative;
     margin-top: -100px;
 
+}
+
+.title{
+    color:white
 }
