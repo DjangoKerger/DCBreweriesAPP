@@ -39,7 +39,7 @@ const ferdaLocation = data => {
 
 //Location Search API
 const searchByLocation = async () => {
-  //Need to get user's current location.
+  //Function for user sharing the location
   const promise = new Promise((resolve, reject) => {
     function getLocation(){
       if(navigator.geolocation){
@@ -61,13 +61,13 @@ const searchByLocation = async () => {
 
     getLocation()
   })
-
+//Rendering list of Breweries nearby the user's location.
   const coords = await promise.then(data => data.coords) 
   const latitude = coords.latitude
   const longitude = coords.longitude
   const options = {
     method: 'GET',
-    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=50&` + apiKey
+    url: baseURL + `/search/geo/point?lat=${latitude}&lng=${longitude}&radius=100&` + apiKey
   }
   
   const locationData = await doCORSRequest(options, ferdaLocation).then(data => {

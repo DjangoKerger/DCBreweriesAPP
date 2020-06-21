@@ -1,12 +1,11 @@
-listContainer = document.getElementById("listContainer")
+listContainer = document.getElementById("listContainer");
 
-
-const renderList = (breweryArray) => {
-  let brewery = breweryArray.map(function (brew) {
-    let imageDom = ''
-    if(brew.brewery.images){
-      if(brew.brewery.images.squareMedium){
-        imageDom = `<img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3"></img>`
+const renderList = () => {
+  let brewery = hundredMileRadiusData.map(function (brew) {
+    let imageDom = "";
+    if (brew.brewery.images) {
+      if (brew.brewery.images.squareMedium) {
+        imageDom = `<img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3"></img>`;
       }
     }
     return `
@@ -16,21 +15,21 @@ const renderList = (breweryArray) => {
           <div>
             ${imageDom}
             <h3 class="card-title">${brew.brewery.name}</h3>
-            <h5>${brew.locationTypeDisplay ? brew.locationTypeDisplay : ''}</h5>
-            <p class="card-text">${brew.streetAddress ? brew.streetAddress : ''}, ${brew.locality ? brew.locationTypeDisplay :''} ${brew.postalCode ? brew.postalCode :''}</p>
+            <h5>${brew.locationTypeDisplay ? brew.locationTypeDisplay : ""}</h5>
+            <p class="card-text">${
+              brew.streetAddress ? brew.streetAddress : ""
+            }, ${brew.locality ? brew.locationTypeDisplay : ""} ${brew.postalCode ? brew.postalCode : ""}</p>
           </div>
           <div class="bottom-card">
             <button type="button" class="btn btn-outline-#C47335"><i class="fab fa-facebook-square fa-2x" style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-instagram fa-2x"style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-twitter-square fa-2x"style="color:#C47335"></i></button>
           </div>
         </div>      
       </div>    
-    </div>`
-  
-  })
+    </div>`;
+  });
 
-  listContainer.innerHTML = brewery.join(" ")
-
-}
+  listContainer.innerHTML = brewery.join(" ");
+};
 //  document.getElementById("btn1").addEventListener("click",function(){
 //    ferdaListOfBeers().then(data => {
 //         -------------The rest of your code-----------------
@@ -38,11 +37,8 @@ const renderList = (breweryArray) => {
 //      })
 //   }
 
-
 //
 //<img src="${brew.brewery.images.squareMedium}" class="img-fluid rounded-circle w-50 mb-3">
-
-
 
 // listContainer.innerHTML = <nav class="navbar navbar-expand-lg navbar-light">
 // <a class="navbar-brand" href="#">BreweryAPP</a>
@@ -60,7 +56,7 @@ const renderList = (breweryArray) => {
 //     <li class="nav-item">
 //       <a class="nav-link" href="#">closest</a>
 //     </li>
-    
+
 //   </ul>
 // </div>
 // </nav>
@@ -68,4 +64,3 @@ const renderList = (breweryArray) => {
 // ${brew.brewery.name}</h3>
 //     <img src="${brew.brewery.images.squareMedium} alt="brewImage">
 //     <p class="card-text">${brew.streetAddress}</p>
-
