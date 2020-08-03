@@ -20,6 +20,6 @@ I hope you enjoy! :)
 
 used Api: https://www.brewerydb.com/developers/docs/endpoint/brewery-location
 
-The Brew App: https://forgetful-porter.surge.sh/
+The Brew App: https://thebrewapp.surge.sh/
 
 Note: Due to the api restricitions, starting from June 2020 we will be using hard coded data. In order to render the list.
