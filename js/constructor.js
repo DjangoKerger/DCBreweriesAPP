@@ -1,5 +1,7 @@
 listContainer = document.getElementById("listContainer");
-
+const webClick = () => {
+  console.log("Hey");
+};
 const renderList = () => {
   let brewery = hundredMileRadiusData.map(function (brew) {
     let imageDom = "";
@@ -21,7 +23,15 @@ const renderList = () => {
             }, ${brew.locality ? brew.locationTypeDisplay : ""} ${brew.postalCode ? brew.postalCode : ""}</p>
           </div>
           <div class="bottom-card">
-            <button type="button" class="btn btn-outline-#C47335"><i class="fab fa-facebook-square fa-2x" style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-instagram fa-2x"style="color:#C47335"></i></button><button type="button" class="btn btn-md btn-fb"><i class="fab fa-twitter-square fa-2x"style="color:#C47335"></i></button>
+            <a target='_blank' href=${
+              brew.brewery.website
+            }><button type="button" class="btn btn-outline-#C47335"><i class="fab fa-facebook-square fa-2x" style="color:#C47335"></i></button></a>
+            <a target='_blank' href=${
+              brew.brewery.website
+            }><button type="button" class="btn btn-md btn-fb"><i class="fab fa-instagram fa-2x"style="color:#C47335"></i></button></a>
+            <a target='_blank' href=${
+              brew.brewery.website
+            }><button type="button" class="btn btn-md btn-fb"><i class="fab fa-twitter-square fa-2x"style="color:#C47335"></i></button></a>
           </div>
         </div>      
       </div>    
